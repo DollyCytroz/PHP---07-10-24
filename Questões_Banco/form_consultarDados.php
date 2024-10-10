@@ -7,7 +7,7 @@
 </head>
 <body>
     <form action="consultarDados.php" method="POST">
-      <label for="id">Insira o ID do carro:</label><br>
+      <label for="id">Insira o ID do evento:</label><br>
       <input type="text" name="id"/><br>
       <input type="submit" value="consultar"/>
     </form>

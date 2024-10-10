@@ -3,24 +3,34 @@
     $host  = "localhost:3306";
     $user  = "root";
     $pass  = "";
-    $base  = "carros";
+    $base  = "eventos";
     $conexao  = mysqli_connect($host, $user, $pass, $base);
 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $id = $_POST["id"];
-        $resultadoQueryMySQL = mysqli_query($conexao, "select * from tb_carros where id = '$id'");
+        $resultadoQueryMySQL = mysqli_query($conexao, "select * from dados_eventos where id = '$id'");
         echo
           "<center><table border=3px>
             <tr>
-              <td>id</td>
-              <td>Montadora</td>
-              <td>Modelo</td>
+            <th>id</th>
+            <th>nome_evento</th>
+            <th>data_evento</th>
+            <th>hora_inicio</th>
+            <th>hora_fim</th>
+            <th>descricao_evento</th>
+            <th>local_evento</th>
+            <th>responsavel_evento</th>
             </tr>";
         while ($escrever = mysqli_fetch_array($resultadoQueryMySQL)) {
           echo
           "</td><td>" . $escrever["id"] .
-          "</td><td>" . $escrever["fabricante"] .
-          "</td><td>" . $escrever["modelo"] . "</td></tr>";
+          "</td><td>" . $escrever["nome_evento"] .
+          "</td><td>" . $escrever["data_evento"] .
+          "</td><td>" . $escrever["hora_inicio"] .
+          "</td><td>" . $escrever["hora_fim"] .
+          "</td><td>" . $escrever["descricao_evento"] .
+          "</td><td>" . $escrever["local_evento"] .
+          "</td><td>" . $escrever["responsavel_evento"] . "</td></tr>";
         }
         echo "</table></center>";
         echo "</br></br>";  
