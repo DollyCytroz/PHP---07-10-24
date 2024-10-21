@@ -106,10 +106,22 @@
 
                     mysqli_close($conexao);
                     ?>
+
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="text-center mt-4">
+        <a href="index.php" class="btn btn-secondary">Voltar</a>
+    </div>
+
+    <footer class="bg-dark text-light text-center py-3 mt-5">
+        <div class="container">
+            <p class = "text_footer">&copy; 2024 Eventify. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 
 </body>
 </html>
